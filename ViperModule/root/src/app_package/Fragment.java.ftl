@@ -78,26 +78,25 @@ public class ${className}Fragment extends Fragment implements BackHandlerObject,
         else
             mBackHandlerInterface = ( BackHandlerInterface ) getActivity();
 			
-		if( getArguments() != null ){
-
-            final String parameter1 = getArguments().getString( PARAMETER1_KEY );
-            final String parameter2 = getArguments().getString( PARAMETER2_KEY );
-        
-			${className}PresentationConfigurator.configure${className}( this, parameter1, parameter2 );
-        }
-
-        if( getPresenter() == null && savedInstanceState != null ) {
+	if( savedInstanceState != null ) {
 
             ${className}PresentationConfigurator.configure${className}( this, (${className}Presenter )savedInstanceState.getSerializable( PRESENTER_KEY ) );
         }
+	else {
+
+            final String parameter1 = getArguments().getString( PARAMETER1_KEY );
+            final String parameter2 = getArguments().getString( PARAMETER2_KEY );
+        	${className}PresentationConfigurator.configure${className}( this, parameter1, parameter2 );
+        }
+		
+	getPresenter().onViewInitilized();
     }
 
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
 
         FrameLayout view = (FrameLayout)inflater.inflate( R.layout.your_fragment_layout, container, false );
-
-        getPresenter().onViewInitilized();
+	
         //
 		//... Init view contorls
 		//
