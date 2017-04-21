@@ -3,9 +3,12 @@ Viper template for Android Studio
 
 To install
 1. Copy ViperModule folder to 
-  \n {ANDROID_STUDIO_LOCATION}/plugins/android/lib/templates/other/
-  \n For MacOS:
-  \n /Applications/Android Studio.app/Contents/plugins/android/lib/templates/other/
+
+   {ANDROID_STUDIO_LOCATION}/plugins/android/lib/templates/other/
+   
+   For MacOS:
+   
+  /Applications/Android Studio.app/Contents/plugins/android/lib/templates/other/
   
 2. Restart Android Studio
 
