@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<template
+    format="4"
+    revision="1"
+    name="VIPER Template"
+    description="Creates new VIPER classes and interfaces, needed for VIPER module.">
+
+    <category value="Other" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.snaps23.printastic" />
+
+    <parameter
+        id="className"
+        name="Viper Module"
+        type="string"
+        constraints="class|unique|nonempty"
+        default=""
+        help="The name of the functionality that requires VIPER" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
